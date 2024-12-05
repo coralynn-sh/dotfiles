@@ -9,8 +9,10 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 output eDP-1 scale 1.6
+output DP-1 mode 2560x1440@60Hz
 output HDMI-A-1 mode 1920x1080@60Hz
 output HDMI-A-1 scale 1.7
+output HDMI-A-1 disable
 
 exec_always $HOME/.autotile/bin/autotiling
 exec pasystray
@@ -44,6 +46,9 @@ bindsym XF86AudioPrev exec playerctl previous
 set $lock 'swaylock -f -i ~/.wallpaper.png --indicator-idle-visible'
 
 bindsym $mod+backslash exec $lock
+
+bindsym $mod+m output HDMI-A-1 disable; output DP-1 enable
+bindsym $mod+shift+m output DP-1 disable; output HDMI-A-1 enable
 
 set $term kitty
 set $rofi_cmd rofi \
