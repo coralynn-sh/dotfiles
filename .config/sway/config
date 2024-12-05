@@ -1,0 +1,164 @@
+include catppuccin-mocha
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $lavender  $lavender
+client.focused_inactive  $overlay0 $base $text  $overlay0  $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+output eDP-1 scale 1.6
+output HDMI-A-1 mode 1920x1080@60Hz
+output HDMI-A-1 scale 1.7
+
+exec_always $HOME/.autotile/bin/autotiling
+exec pasystray
+exec waybar
+exec dunst
+exec keepassxc
+exec swayidle -w before-sleep 'swaylock -f -i ~/.wallpaper.png --indicator-idle-visible'
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec easyeffects --gapplication-service
+exec udiskie
+
+set $mod mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym mod4+XF86MonBrightnessDown exec light -U 5 -s sysfs/leds/kbd_backlight
+bindsym mod4+XF86MonBrightnessUp exec light -A 5 -s sysfs/leds/kbd_backlight
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+set $lock 'swaylock -f -i ~/.wallpaper.png --indicator-idle-visible'
+
+bindsym $mod+backslash exec $lock
+
+set $term kitty
+set $rofi_cmd rofi \
+        -terminal '$term'
+
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+gaps inner 10
+default_border pixel 3
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Requires: desktop-backgrounds-compat, swaybg
+output * bg $HOME/.wallpaper.png fill
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+q exec $term
+    # bindsym $mod+shift+q exec env NOZ=0 $term
+    bindsym $mod+d exec krita
+    bindsym $mod+t exec flatpak run com.discordapp.Discord
+
+    # Kill focused window
+    bindsym $mod+c kill
+
+    # Start your launcher
+    bindsym $mod+space exec $menu
+
+
+    input type:keyboard {
+# Capslock key should work as escape key
+# See /usr/share/X11/xkb/rules/xorg.lst for options
+        xkb_options ctrl:nocaps
+    }
+
+    input type:touchpad {
+        accel_profile adaptive
+        pointer_accel 0.2
+        natural_scroll enabled
+        dwt disabled
+    }
+
+    floating_modifier mod4 normal
+
+    # Reload the configuration file
+    bindsym $mod+r reload
+
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindcode 194 workspace number 1
+    bindcode 195 workspace number 2
+    bindcode 196 workspace number 3
+    bindcode 197 workspace number 4
+    bindcode 198 workspace number 5
+    bindcode 199 workspace number 6
+    bindcode 200 workspace number 7
+    bindcode 201 workspace number 8
+    bindcode 202 workspace number 9
+
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    # bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindcode $mod+194 move container to workspace number 1
+    bindcode $mod+195 move container to workspace number 2
+    bindcode $mod+196 move container to workspace number 3
+    bindcode $mod+197 move container to workspace number 4
+    bindcode $mod+198 move container to workspace number 5
+    bindcode $mod+199 move container to workspace number 6
+    bindcode $mod+200 move container to workspace number 7
+    bindcode $mod+201 move container to workspace number 8
+    bindcode $mod+202 move container to workspace number 9
+
+    bindsym $mod+shift+1 move container to workspace number 1
+    bindsym $mod+shift+2 move container to workspace number 2
+    bindsym $mod+shift+3 move container to workspace number 3
+    bindsym $mod+shift+4 move container to workspace number 4
+    bindsym $mod+shift+5 move container to workspace number 5
+    bindsym $mod+shift+6 move container to workspace number 6
+    bindsym $mod+shift+7 move container to workspace number 7
+    bindsym $mod+shift+8 move container to workspace number 8
+    bindsym $mod+shift+9 move container to workspace number 9
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+v floating toggle
+
+#
+# Scratchpad:
+#
+    bindsym $mod+k move scratchpad
+
+    bindsym $mod+s scratchpad show
+
+bindsym $mod+w exec firefox
+bindsym $mod+b exec thunar
+bindsym $mod+p exec keepassxc
+
+bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+
+seat * hide_cursor 2000
+
+exec /usr/libexec/sway-systemd/session.sh
