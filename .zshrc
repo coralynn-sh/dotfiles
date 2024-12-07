@@ -1,5 +1,3 @@
-export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="robbyrussell"
 
 plugins=(git)
@@ -7,6 +5,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias ls=eza
+alias ns="nix-shell --run zsh"
 alias fkb="source ~/.qmk/bin/activate && qmk compile -c && qmk flash"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -32,5 +31,7 @@ then
     export XDG_SESSION_TYPE=wayland
     sway
 fi
+
+[ -n "$IN_NIX_SHELL" ] && export PROMPT=$PROMPT'%{$fg[blue]%}(nix-shell)%{$reset_color%} ' && echo -ne '\e[5 q'
 
 true

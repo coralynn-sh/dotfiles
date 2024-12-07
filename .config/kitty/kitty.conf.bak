@@ -1,4 +1,6 @@
 # BEGIN_KITTY_THEME
-# Adwaita light
+# Catppuccin-Mocha
 include current-theme.conf
+background_opacity 0.93
+shell_integration enabled
 # END_KITTY_THEME

@@ -14,7 +14,7 @@ output HDMI-A-1 mode 1920x1080@60Hz
 output HDMI-A-1 scale 1.7
 output HDMI-A-1 disable
 
-exec_always $HOME/.autotile/bin/autotiling
+exec_always autotiling
 exec pasystray
 exec waybar
 exec dunst
@@ -23,6 +23,7 @@ exec swayidle -w before-sleep 'swaylock -f -i ~/.wallpaper.png --indicator-idle-
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec easyeffects --gapplication-service
 exec udiskie
+exec xsettingsd
 
 set $mod mod4
 # Home row direction keys, like vim
@@ -73,7 +74,7 @@ output * bg $HOME/.wallpaper.png fill
     bindsym $mod+q exec $term
     # bindsym $mod+shift+q exec env NOZ=0 $term
     bindsym $mod+d exec krita
-    bindsym $mod+t exec flatpak run com.discordapp.Discord
+    bindsym $mod+t exec vesktop --ozone-platform-hint=auto
 
     # Kill focused window
     bindsym $mod+c kill
@@ -154,16 +155,17 @@ output * bg $HOME/.wallpaper.png fill
 #
 # Scratchpad:
 #
-    bindsym $mod+k move scratchpad
-
-    bindsym $mod+s scratchpad show
+bindsym $mod+k move scratchpad
+bindsym $mod+s scratchpad show
 
 bindsym $mod+w exec firefox
-bindsym $mod+b exec thunar
+bindsym $mod+b exec pcmanfm
 bindsym $mod+p exec keepassxc
 
 bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 seat * hide_cursor 2000
+seat seat0 xcursor_theme Vimix-Cursors 24
+exec gsettings set org.gnome.desktop.interface cursor-theme Vimix-Cursors
 
-exec /usr/libexec/sway-systemd/session.sh
+include /etc/sway/config.d/*
