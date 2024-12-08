@@ -32,6 +32,7 @@
         git
         glib
         grim
+        halloy
         imv
         keepassxc
         kitty
