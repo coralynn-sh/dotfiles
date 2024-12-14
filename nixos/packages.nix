@@ -36,6 +36,7 @@
         imv
         keepassxc
         kitty
+        klipper-estimator
         krita
         libnotify
         nautilus
@@ -43,6 +44,7 @@
         oh-my-zsh
         pcmanfm
         playerctl
+        prusa-slicer
         rofi-wayland
         slurp
         swaybg
