@@ -23,7 +23,9 @@
     };
 
     environment.systemPackages = with pkgs; [
+        aerc
         autotiling
+        blender
         cifs-utils
         dunst
         easyeffects
@@ -39,6 +41,7 @@
         klipper-estimator
         krita
         libnotify
+        mpv
         nautilus
         neovim
         oh-my-zsh
