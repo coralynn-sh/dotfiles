@@ -24,18 +24,11 @@ require("lazy").setup({
 
             configs.setup({
 
-                ensure_installed = { "c", "lua", "rust", "go", "javascript", "markdown"},
+                ensure_installed = { "c", "haskell", "markdown"},
 
-                -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
 
-                -- Automatically install missing parsers when entering buffer
-                -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
                 auto_install = true,
-
-
-                ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-                -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
                 highlight = {
                     enable = true,
@@ -46,14 +39,6 @@ require("lazy").setup({
 
     },
     { "cappyzawa/trim.nvim", opts = {} },
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'L3MON4D3/LuaSnip'},
     { 'numToStr/Comment.nvim', opts = {}, lazy = false},
     { 'Civitasv/cmake-tools.nvim' },
     {
@@ -63,9 +48,9 @@ require("lazy").setup({
     },
     {'tikhomirov/vim-glsl'},
     {'rgroli/other.nvim'},
-    {'vim-crystal/vim-crystal'},
     {'smithbm2316/centerpad.nvim'},
     {'hiphish/rainbow-delimiters.nvim'},
+    {'itchyny/vim-haskell-indent'},
 })
 
 require("catppuccin").setup({
@@ -103,71 +88,6 @@ vim.keymap.set("n", "<leader>6", function() harpoon:list():select(6) end)
 vim.keymap.set("n", "<leader>7", function() harpoon:list():select(7) end)
 vim.keymap.set("n", "<leader>8", function() harpoon:list():select(8) end)
 vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end)
-
-vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.keymap.set('n', '[e', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-vim.keymap.set('n', ']e', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local opts = {buffer = event.buf}
-
-    -- these will be buffer-local keybindings
-    -- because they only work if you have an active language server
-
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<leader>bf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  end
-})
-
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local default_setup = function(server)
-  require('lspconfig')[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
-
--- require'lspconfig'.clangd.setup{}
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {},
-  handlers = {
-    default_setup,
-  },
-})
-
--- local cmp = require('cmp')
---
--- cmp.setup({
---   sources = {
---     {name = 'nvim_lsp'},
---   },
---   mapping = cmp.mapping.preset.insert({
---     -- Enter key confirms completion item
---     ['<CR>'] = cmp.mapping.confirm({select = false}),
---     -- Ctrl + space triggers completion menu
---     ['<C-Space>'] = cmp.mapping.complete(),
---   }),
---   snippet = {
---     expand = function(args)
---       local ls = require('luasnip')
---       ls.lsp_expand(args.body)
---       vim.keymap.set({"i", "s"}, "<C-l>", function() ls.jump( 1) end, {silent = true})
---       vim.keymap.set({"i", "s"}, "<C-h>", function() ls.jump(-1) end, {silent = true})
---     end,
---   },
--- })
 
 require('other-nvim').setup({
     mappings = {
@@ -247,6 +167,10 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     command = "set filetype=haskell",
 })
 
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*.h"},
+    command = "set filetype=c",
+})
 
 vim.keymap.set('n', '<leader>oh', '<cmd>:Other header<CR>')
 vim.keymap.set('n', '<leader>ot', '<cmd>:Other test<CR>')
