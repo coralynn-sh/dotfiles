@@ -50,6 +50,7 @@
       pcmanfm
       playerctl
       prusa-slicer
+      python3
       ripgrep
       rofi-wayland
       slurp
