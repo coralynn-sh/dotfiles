@@ -158,7 +158,7 @@ output * bg $HOME/.wallpaper.png fill
 bindsym $mod+k move scratchpad
 bindsym $mod+s scratchpad show
 
-bindsym $mod+w exec firefox
+bindsym $mod+w exec qutebrowser
 bindsym $mod+b exec pcmanfm
 bindsym $mod+p exec keepassxc
 

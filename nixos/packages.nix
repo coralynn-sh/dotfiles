@@ -51,6 +51,7 @@
       playerctl
       prusa-slicer
       python3
+      qutebrowser
       ripgrep
       rofi-wayland
       slurp
@@ -61,6 +62,7 @@
       waybar
       wl-clipboard
       xsettingsd
+      yt-dlp
       zoxide
     ];
 
