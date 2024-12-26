@@ -2,6 +2,8 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
+DISABLE_MAGIC_FUNCTIONS=true
+
 source $ZSH/oh-my-zsh.sh
 
 alias ls=eza
