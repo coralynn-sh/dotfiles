@@ -26,6 +26,7 @@
       aerc
       autotiling
       blender
+      cabal-install
       cifs-utils
       dunst
       easyeffects
@@ -36,6 +37,8 @@
       gpt4all
       grim
       halloy
+      haskell.compiler.ghc910
+      haskellPackages.hoogle
       imv
       keepassxc
       kitty
@@ -56,6 +59,7 @@
       rofi-wayland
       slurp
       swaybg
+      tree
       udiskie
       vesktop
       vimix-cursor-theme
