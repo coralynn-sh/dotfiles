@@ -16,8 +16,6 @@
     ];
   };
 
-  networking.nameservers = [ "10.20.30.4" ];
-
   services.resolved = {
     enable = true;
     dnssec = "true";

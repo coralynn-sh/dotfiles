@@ -34,11 +34,13 @@
       gcc
       git
       glib
+      godot_4
       gpt4all
       grim
       halloy
       haskell.compiler.ghc910
       haskellPackages.hoogle
+      hlint
       imv
       keepassxc
       kitty
@@ -67,6 +69,7 @@
       wl-clipboard
       xsettingsd
       yt-dlp
+      zathura
       zoxide
     ];
 
