@@ -172,6 +172,16 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     command = "set filetype=c",
 })
 
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*.py"},
+    command = "set tabstop=4 softtabstop=4 shiftwidth=4",
+})
+
+vim.api.nvim_create_autocmd({"BufLeave", "BufWinLeave"}, {
+    pattern = {"*.py"},
+    command = "set tabstop=2 softtabstop=2 shiftwidth=2",
+})
+
 vim.keymap.set('n', '<leader>oh', '<cmd>:Other header<CR>')
 vim.keymap.set('n', '<leader>ot', '<cmd>:Other test<CR>')
 vim.keymap.set('n', '<leader>oc', '<cmd>:Other code<CR>')
