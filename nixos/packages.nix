@@ -22,12 +22,18 @@
         enableVirtualCamera = true;
     };
 
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
     environment.systemPackages = with pkgs; [
       aerc
       autotiling
       blender
       cabal-install
       cifs-utils
+      distrobox
       dunst
       easyeffects
       eza
