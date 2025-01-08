@@ -173,6 +173,11 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
 })
 
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*.gdshaderinc"},
+    command = "set filetype=gdshader",
+})
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     pattern = {"*.py"},
     command = "set tabstop=4 softtabstop=4 shiftwidth=4",
 })
