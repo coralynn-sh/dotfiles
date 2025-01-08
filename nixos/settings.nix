@@ -33,4 +33,6 @@
     '';
 
   services.tailscale.enable = true;
+
+  hardware.opentabletdriver.enable = true;
 }
