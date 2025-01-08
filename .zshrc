@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls=eza
 alias less=moar
 alias ns="nix-shell --run zsh"
-alias fkb="source ~/.qmk/bin/activate && qmk compile -c && qmk flash"
+alias fkb="qmk compile -c && qmk flash"
 eval "$(zoxide init --cmd cd zsh)"
 
 export EDITOR=nvim

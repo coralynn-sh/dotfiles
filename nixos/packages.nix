@@ -62,6 +62,7 @@
       playerctl
       prusa-slicer
       python3
+      qmk
       qutebrowser
       ripgrep
       rofi-wayland

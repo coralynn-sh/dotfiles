@@ -3,6 +3,8 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  hardware.keyboard.qmk.enable = true;
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
