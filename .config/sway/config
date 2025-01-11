@@ -89,6 +89,10 @@ output * bg $HOME/.wallpaper.png fill
         xkb_options ctrl:nocaps
     }
 
+    input "43256:6195:Bastard_Keyboards_Charybdis_(4x6)_Splinky_Mouse" {
+      accel_profile "adaptive"
+    }
+
     input type:touchpad {
         accel_profile adaptive
         pointer_accel 0.2

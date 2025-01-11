@@ -29,6 +29,7 @@
 
     environment.systemPackages = with pkgs; [
       aerc
+      aseprite
       autotiling
       blender
       cabal-install
