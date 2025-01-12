@@ -38,6 +38,7 @@
       dunst
       easyeffects
       eza
+      freecad
       gcc
       git
       glib
@@ -71,6 +72,7 @@
       swaybg
       tree
       udiskie
+      unzip
       vesktop
       vimix-cursor-theme
       waybar
@@ -78,6 +80,7 @@
       xsettingsd
       yt-dlp
       zathura
+      zip
       zoxide
     ];
 
