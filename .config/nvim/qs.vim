@@ -56,3 +56,4 @@ vn <leader>lf :s/\s*$\s*/<C-k>DE$<C-k>DE/<CR>gv:!column -ts <C-k>DE<CR><ESC>
 vn <leader>cfa :s/\s*=\s*/<C-k>DE=<C-k>DE/<CR>gv:!column -ts <C-k>DE<CR><ESC>
 vn <leader>cfm :s/\s*\(\S\+\)$/<C-k>DE\1/<CR>gv:!column -ts <C-k>DE<CR><ESC>
 vn <leader>cfd :!column -t<CR>gv=
+nn <leader>pd :r!date -Iseconds<CR>Idate: <ESC>_
