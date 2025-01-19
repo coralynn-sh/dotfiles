@@ -41,6 +41,7 @@
       freecad
       gcc
       git
+      git-lfs
       glib
       godot_4
       gpt4all
