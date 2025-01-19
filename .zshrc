@@ -17,6 +17,8 @@ eval "$(zoxide init --cmd cd zsh)"
 
 export EDITOR=nvim
 export VISUAL=nvim
+export NIXPKGS_ALLOW_INSECURE=1
+export NIXPKGS_ALLOW_UNFREE=1
 
 [ -d "$HOME/.local/bin" ] && export PATH=$HOME/.local/bin:$PATH
 
