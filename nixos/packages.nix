@@ -52,6 +52,7 @@
       hlint
       imv
       keepassxc
+      kicad
       kitty
       klipper-estimator
       krita
@@ -61,6 +62,7 @@
       nautilus
       neovim
       oh-my-zsh
+      openscad
       pcmanfm
       playerctl
       prusa-slicer
