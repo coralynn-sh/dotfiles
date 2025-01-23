@@ -1,5 +1,4 @@
 { config, libs, pkgs, ... }:
-
 {
     nixpkgs.config.allowUnfree = true;
 
@@ -62,7 +61,7 @@
       nautilus
       neovim
       oh-my-zsh
-      openscad
+      openscad-unstable
       pcmanfm
       playerctl
       prusa-slicer
