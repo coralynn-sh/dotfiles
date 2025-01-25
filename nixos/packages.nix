@@ -1,4 +1,7 @@
 { config, libs, pkgs, ... }:
+let
+  unstable = import <unstable> {};
+in
 {
     nixpkgs.config.allowUnfree = true;
 
@@ -61,10 +64,10 @@
       nautilus
       neovim
       oh-my-zsh
-      openscad-unstable
+      unstable.openscad-unstable
       pcmanfm
       playerctl
-      prusa-slicer
+      unstable.prusa-slicer
       python3
       qmk
       qutebrowser
