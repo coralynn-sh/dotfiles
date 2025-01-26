@@ -53,6 +53,7 @@ in
       haskellPackages.hoogle
       hlint
       imv
+      inkscape
       keepassxc
       kicad
       kitty
