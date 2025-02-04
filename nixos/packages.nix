@@ -46,7 +46,6 @@ in
       git-lfs
       glib
       godot_4
-      gpt4all
       grim
       halloy
       haskell.compiler.ghc910
@@ -65,10 +64,8 @@ in
       nautilus
       neovim
       oh-my-zsh
-      unstable.openscad-unstable
       pcmanfm
       playerctl
-      unstable.prusa-slicer
       python3
       qmk
       qutebrowser
@@ -88,6 +85,8 @@ in
       zathura
       zip
       zoxide
+      unstable.openscad-unstable
+      unstable.prusa-slicer
     ];
 
     environment.sessionVariables = {
