@@ -32,6 +32,7 @@ in
     environment.systemPackages = with pkgs; [
       aerc
       aseprite
+      audacity
       autotiling
       blender
       cabal-install
@@ -40,7 +41,6 @@ in
       dunst
       easyeffects
       eza
-      freecad
       gcc
       git
       git-lfs
@@ -85,6 +85,8 @@ in
       zathura
       zip
       zoxide
+      unstable.flowblade
+      unstable.freecad
       unstable.openscad-unstable
       unstable.prusa-slicer
     ];
