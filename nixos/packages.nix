@@ -32,7 +32,6 @@ in
     environment.systemPackages = with pkgs; [
       aerc
       aseprite
-      audacity
       autotiling
       blender
       cabal-install
@@ -58,12 +57,15 @@ in
       kitty
       klipper-estimator
       krita
+      legcord
       libnotify
+      linux-wifi-hotspot
       moar
       mpv
       nautilus
       neovim
       oh-my-zsh
+      pavucontrol
       pcmanfm
       playerctl
       python3
@@ -76,7 +78,6 @@ in
       tree
       udiskie
       unzip
-      vesktop
       vimix-cursor-theme
       waybar
       wl-clipboard
