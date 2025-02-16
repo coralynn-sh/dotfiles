@@ -40,6 +40,7 @@ in
       dunst
       easyeffects
       eza
+      ffmpeg
       gcc
       git
       git-lfs
@@ -86,7 +87,6 @@ in
       zathura
       zip
       zoxide
-      unstable.flowblade
       unstable.freecad
       unstable.openscad-unstable
       unstable.prusa-slicer
