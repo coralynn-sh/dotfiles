@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls=eza
 alias less=moar
 alias ns="nix-shell --run zsh"
+alias nsr="nix-shell --run"
 alias fkb="qmk compile -c && qmk flash"
 alias ts="tail ~/.strokes.log"
 alias cwt="git commit -am \"$(date -Iseconds)\""
