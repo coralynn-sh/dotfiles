@@ -1,7 +1,4 @@
 { config, libs, pkgs, ... }:
-let
-  unstable = import <unstable> {};
-in
 {
     nixpkgs.config.allowUnfree = true;
 
@@ -31,7 +28,6 @@ in
 
     environment.systemPackages = with pkgs; [
       aerc
-      aseprite
       autotiling
       blender
       cabal-install
@@ -41,14 +37,14 @@ in
       easyeffects
       eza
       ffmpeg
-      gcc
+      freecad
       git
       git-lfs
       glib
       godot_4
       grim
       halloy
-      haskell.compiler.ghc910
+      haskell.compiler.ghc96
       haskellPackages.hoogle
       hlint
       imv
@@ -61,14 +57,15 @@ in
       legcord
       libnotify
       linux-wifi-hotspot
-      moar
       mpv
       nautilus
       neovim
       oh-my-zsh
+      openscad-unstable
       pavucontrol
       pcmanfm
       playerctl
+      prusa-slicer
       python3
       qmk
       qutebrowser
@@ -87,9 +84,6 @@ in
       zathura
       zip
       zoxide
-      unstable.freecad
-      unstable.openscad-unstable
-      unstable.prusa-slicer
     ];
 
     environment.sessionVariables = {
