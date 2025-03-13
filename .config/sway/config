@@ -170,5 +170,5 @@ bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 seat * hide_cursor 2000
 seat seat0 xcursor_theme catppuccin-mocha-dark-cursors 24
-exec gsettings set org.gnome.desktop.interface cursor-theme Catppucatppuccin-mocha-dark-cursors
+exec gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
 include /etc/sway/config.d/*
