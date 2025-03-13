@@ -39,10 +39,5 @@
     HandlePowerKey=ignore
     '';
 
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
-  };
-
   hardware.opentabletdriver.enable = true;
 }

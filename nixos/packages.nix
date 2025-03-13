@@ -26,6 +26,16 @@
       dockerCompat = true;
     };
 
+    services.espanso = {
+      package = pkgs.espanso-wayland;
+      enable = true;
+    };
+
+    services.syncthing = {
+      user = "coralynn";
+      enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       aerc
       autotiling
@@ -50,7 +60,6 @@
       imv
       inkscape
       keepassxc
-      kicad
       kitty
       klipper-estimator
       krita
@@ -71,12 +80,13 @@
       qutebrowser
       ripgrep
       rofi-wayland
+      signal-desktop
       slurp
       swaybg
       tree
       udiskie
       unzip
-      vimix-cursor-theme
+      catppuccin-cursors.mochaDark
       waybar
       wl-clipboard
       xsettingsd
