@@ -26,21 +26,15 @@
       dockerCompat = true;
     };
 
-    services.espanso = {
-      package = pkgs.espanso-wayland;
-      enable = true;
-    };
-
-    services.syncthing = {
-      user = "coralynn";
-      enable = true;
-    };
-
     environment.systemPackages = with pkgs; [
+      aaxtomp3
       aerc
+      audible-cli
       autotiling
       blender
       cabal-install
+      catppuccin-cursors.mochaDark
+      chromium
       cifs-utils
       distrobox
       dunst
@@ -83,10 +77,11 @@
       signal-desktop
       slurp
       swaybg
+      syncthing
       tree
       udiskie
+      unciv
       unzip
-      catppuccin-cursors.mochaDark
       waybar
       wl-clipboard
       xsettingsd

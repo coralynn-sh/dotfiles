@@ -44,12 +44,11 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym $mod+m input type:touchpad events toggle enabled disabled
+
 set $lock 'swaylock -f -i ~/.wallpaper.png --indicator-idle-visible'
 
 bindsym $mod+backslash exec $lock
-
-bindsym $mod+m output HDMI-A-1 disable; output DP-1 enable
-bindsym $mod+shift+m output DP-1 disable; output HDMI-A-1 enable
 
 set $term kitty
 set $rofi_cmd rofi \
@@ -75,6 +74,7 @@ output * bg $HOME/.wallpaper.png fill
     # bindsym $mod+shift+q exec env NOZ=0 $term
     bindsym $mod+d exec krita
     bindsym $mod+t exec legcord --ozone-platform-hint=auto
+    bindsym $mod+y exec signal-desktop --ozone-platform-hint=auto
 
     # Kill focused window
     bindsym $mod+c kill
@@ -159,8 +159,18 @@ output * bg $HOME/.wallpaper.png fill
 #
 # Scratchpad:
 #
-bindsym $mod+k move scratchpad
+bindsym $mod+grave move scratchpad
 bindsym $mod+s scratchpad show
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 bindsym $mod+w exec qutebrowser
 bindsym $mod+b exec pcmanfm
