@@ -42,4 +42,6 @@
     '';
 
   hardware.opentabletdriver.enable = true;
+
+  hardware.keyboard.zsa.enable = true;
 }
