@@ -159,8 +159,8 @@ output * bg $HOME/.wallpaper.png fill
 #
 # Scratchpad:
 #
-bindsym $mod+grave move scratchpad
-bindsym $mod+s scratchpad show
+bindsym $mod+shift+grave move scratchpad
+bindsym $mod+grave scratchpad show
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
