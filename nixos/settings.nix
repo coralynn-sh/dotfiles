@@ -44,4 +44,8 @@
   hardware.opentabletdriver.enable = true;
 
   hardware.keyboard.zsa.enable = true;
+
+  hardware.sane.enable = true;
+
+  services.flatpak.enable = true;
 }

@@ -74,7 +74,7 @@ output * bg $HOME/.wallpaper.png fill
     # bindsym $mod+shift+q exec env NOZ=0 $term
     bindsym $mod+d exec krita
     bindsym $mod+t exec legcord --ozone-platform-hint=auto
-    bindsym $mod+y exec signal-desktop --ozone-platform-hint=auto
+    bindsym $mod+y exec signal-desktop --ozone-platform-hint=auto --js-flags="--no-decommit-pooled-pages"
 
     # Kill focused window
     bindsym $mod+c kill
