@@ -36,10 +36,12 @@
       catppuccin-cursors.mochaDark
       chromium
       cifs-utils
+      cryptsetup
       distrobox
       dunst
       easyeffects
       eza
+      file
       ffmpeg
       freecad
       git
