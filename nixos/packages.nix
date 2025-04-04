@@ -34,7 +34,7 @@
       blender
       cabal-install
       catppuccin-cursors.mochaDark
-      chromium
+      (chromium.override { enableWideVine = true; })
       cifs-utils
       cryptsetup
       distrobox
