@@ -34,6 +34,8 @@ set $right l
 
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
+bindcode 192 exec light -U 5
+bindcode 193 exec light -A 5
 bindsym mod4+XF86MonBrightnessDown exec light -U 5 -s sysfs/leds/kbd_backlight
 bindsym mod4+XF86MonBrightnessUp exec light -A 5 -s sysfs/leds/kbd_backlight
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
