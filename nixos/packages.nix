@@ -40,6 +40,7 @@
       distrobox
       dunst
       easyeffects
+      emacs-pgtk
       eza
       file
       ffmpeg

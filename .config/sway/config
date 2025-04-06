@@ -8,7 +8,7 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
-output eDP-1 scale 1.6
+output eDP-1 scale 2.0
 output DP-1 mode 2560x1440@60Hz
 output HDMI-A-1 mode 1920x1080@60Hz
 output HDMI-A-1 scale 1.7
@@ -24,6 +24,7 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec easyeffects --gapplication-service
 exec udiskie
 exec xsettingsd
+exec emacs --daemon
 
 set $mod mod4
 # Home row direction keys, like vim
@@ -77,6 +78,8 @@ output * bg $HOME/.wallpaper.png fill
     bindsym $mod+d exec krita
     bindsym $mod+t exec legcord --ozone-platform-hint=auto
     bindsym $mod+y exec signal-desktop --ozone-platform-hint=auto --js-flags="--no-decommit-pooled-pages"
+
+    bindsym $mod+e exec emacsclient -c
 
     # Kill focused window
     bindsym $mod+c kill
@@ -191,6 +194,7 @@ bindsym $mod+p exec keepassxc
 bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 seat * hide_cursor 2000
-seat seat0 xcursor_theme catppuccin-mocha-dark-cursors 24
+seat seat0 xcursor_theme catppuccin-mocha-dark-cursors 16
 exec gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
+exec gsettings set org.gnome.desktop.interface cursor-size 16
 include /etc/sway/config.d/*

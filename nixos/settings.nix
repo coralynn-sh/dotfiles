@@ -6,6 +6,7 @@
       noto-fonts-emoji
       font-awesome
       fira-mono
+      source-code-pro
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
