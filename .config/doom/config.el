@@ -108,3 +108,7 @@
   (setq indent-line-function 'indent-relative))
 
 (add-hook 'haskell-mode-hook 'haskell-setup)
+
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+(setq select-enable-clipboard nil)
