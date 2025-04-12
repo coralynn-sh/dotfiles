@@ -62,9 +62,7 @@
       krita
       legcord
       libnotify
-      linux-wifi-hotspot
       mpv
-      nautilus
       neovim
       oh-my-zsh
       openscad-unstable
@@ -83,7 +81,6 @@
       syncthing
       tree
       udiskie
-      unciv
       unzip
       waybar
       wl-clipboard
@@ -92,6 +89,7 @@
       zathura
       zip
       zoxide
+      zlib
     ];
 
     environment.sessionVariables = {
