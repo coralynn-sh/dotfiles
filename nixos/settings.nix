@@ -34,8 +34,6 @@
     dnsovertls = "false";
   };
 
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
-
   services.udisks2.enable = true;
 
   services.logind.extraConfig = ''
@@ -47,6 +45,8 @@
   hardware.keyboard.zsa.enable = true;
 
   hardware.sane.enable = true;
+
+  services.mullvad-vpn.enable = true;
 
   services.flatpak.enable = true;
 }

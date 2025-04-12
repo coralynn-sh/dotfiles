@@ -112,3 +112,8 @@
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
 (setq select-enable-clipboard nil)
+
+(setq doom-theme 'catppuccin)
+
+(set-frame-parameter nil 'alpha-background 93)
+(add-to-list 'default-frame-alist '(alpha-background . 93))
