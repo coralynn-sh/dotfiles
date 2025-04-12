@@ -13,6 +13,7 @@ alias fkb="qmk compile -c && qmk flash"
 alias ts="tail ~/.strokes.log"
 alias cwt="git commit -am \"$(date -Iseconds)\""
 alias swt="git commit -am \"$(date -Iseconds)\" && git push"
+alias gs="git status -s"
 eval "$(zoxide init --cmd cd zsh)"
 
 export EDITOR=nvim

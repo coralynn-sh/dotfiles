@@ -11,9 +11,6 @@
         "sway/mode",
         "sway/scratchpad"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
     "modules-right": [
         "backlight",
         "pulseaudio",

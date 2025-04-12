@@ -107,7 +107,7 @@
   (haskell-indentation-mode 0)
   (setq indent-line-function 'indent-relative))
 
-(add-hook 'haskell-mode-hook 'haskell-setup)
+(add-hook! 'haskell-mode-hook 'haskell-setup)
 
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
