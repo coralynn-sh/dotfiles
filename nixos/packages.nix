@@ -27,6 +27,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      (chromium.override { enableWideVine = true; })
       aaxtomp3
       aerc
       audible-cli
@@ -34,7 +35,6 @@
       blender
       cabal-install
       catppuccin-cursors.mochaDark
-      (chromium.override { enableWideVine = true; })
       cifs-utils
       cryptsetup
       distrobox
@@ -42,8 +42,8 @@
       easyeffects
       emacs-pgtk
       eza
-      file
       ffmpeg
+      file
       freecad
       git
       git-lfs
@@ -88,8 +88,8 @@
       yt-dlp
       zathura
       zip
-      zoxide
       zlib
+      zoxide
     ];
 
     environment.sessionVariables = {
